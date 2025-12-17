@@ -1,0 +1,923 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;     /* better for mobile readability */
+  overflow-x: hidden;  /* prevents horizontal cut on mobile */
+}
+
+
+
+
+
+
+/* Navigation Menu */
+nav {
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(20, 20, 19);
+  padding: 10px 20px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  
+  
+}
+
+nav .logo img {
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 60px;
+}
+
+nav ul li a {
+  font-family: time new roman;
+  color: #faf6f6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+nav ul li a:hover{
+  color: #d31818;
+
+}
+nav ul li span {
+  font-family: time new roman;
+  color: #faf6f6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+
+}
+nav ul li span:hover{
+  color: #d31818;
+
+}
+/* Mobile Navigation Fix */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  nav .logo img {
+    height: 50px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 10px 0;   /* remove left spacing */
+  }
+
+  nav ul li a,
+  nav ul li span {
+    font-size: 1.2rem;  /* mobile-friendly size */
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  background: url('../images/bg1.jpeg') no-repeat center center / cover;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1; /* Ensure no extra spacing */
+  color: #ffffff;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin: 10px 0 0; /* Add margin between h1 and h2 */
+  line-height: 1; /* Ensure no extra spacing */
+  color:yellow;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color:yellow;
+  margin: 10px 0 0; /* Add margin between h2 and p */
+  line-height: 1; /* Ensure no extra spacing */
+}
+
+.cta-button {
+  background: #ff5733;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  position: absolute; /* Position the button below the center */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  bottom: 20px; /* Position at the bottom with some spacing */
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* Hero Section – Mobile Fix */
+@media (max-width: 768px) {
+
+  .hero {
+    height: auto;                 /* flexible height */
+    min-height: 80vh;             /* still looks full */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .cta-button {
+    position: relative;           /* remove absolute */
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  background: #4f09a0;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+/* About Us Section */
+.about-us {
+  padding: 100px 20px 60px 20px; /* top, right, bottom, left */
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  margin: 0 0 20px 0; /* remove margin-top */
+  color: #333;
+}
+
+
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  color: #ff5733;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+.about-image {
+  flex: 1;
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 20px;
+  }
+}
+/* About Us – Mobile Refinements */
+@media (max-width: 768px) {
+
+  .about-us {
+    padding: 70px 15px 40px 15px;
+  }
+
+  .about-us h1 {
+    font-size: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p,
+  .about-text ul li {
+    font-size: 1rem;
+  }
+
+  .about-text ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+
+
+
+
+
+
+/* Products Section */
+.products {
+  padding: 100px 20px 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.products h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0 0 20px 0;
+  color: #333;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.product h2 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #ff5733;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+/* Products – Mobile Fix */
+@media (max-width: 768px) {
+
+  .products {
+    padding: 70px 15px 40px 15px;
+  }
+
+  .products h1 {
+    font-size: 2rem;
+  }
+
+  .product-grid {
+    justify-content: center;
+  }
+
+  .product {
+    width: 100%;          /* full width on mobile */
+    max-width: 350px;    /* prevents too wide cards */
+    margin: 15px auto;
+  }
+
+  .product h2 {
+    font-size: 1.3rem;
+  }
+
+  .product p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: static;
+  top: 100%;
+  left: 0;
+  background: #333;
+  padding: 5px; /* Reduced padding */
+  list-style: none;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 10px; /* Reduced padding */
+  display: block;
+  font-size: 0.9rem; /* Smaller font size */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.dropdown-menu li a:hover {
+  background: #ff5733;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Dropdown – Mobile Fix */
+@media (max-width: 768px) {
+
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  .dropdown-menu li a {
+    white-space: normal;   /* allow wrapping */
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  /* Enable tap-to-open behavior */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Contact Section b2 */
+.contact {
+  padding: 100px 20px 50px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contact Person Section B-1*/
+.contact-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.person-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.person-details h2 {
+  font-size: 1.5rem;
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.person-details p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+/* Contact Section – Mobile Fix */
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 70px 15px 40px 15px;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;   /* stack items */
+    gap: 15px;
+  }
+
+  .person-image img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .person-details h2 {
+    font-size: 1.3rem;
+  }
+
+  .person-details p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+/* Map and Contact Form Sections */
+.map,
+.contact-form {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Contact Form Container */
+.contact-form {
+  position: relative;       /* enable absolute positioning inside */
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Form Groups */
+.contact-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Labels */
+.contact-form label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Inputs & Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+
+/* Submit button positioned at bottom of form */
+.contact-form .cta-button {
+  position: absolute;
+  bottom: 0px;             /* distance from bottom of form container */
+  left: 50%;                /* center horizontally */
+  transform: translateX(-50%);
+  background: #449714;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+
+.contact-form .cta-button:hover {
+  background: #e72375;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr; /* stack columns on mobile */
+  }
+
+  .contact-form .cta-button {
+    width: 70%;               /* smaller button on mobile */
+  }
+}
+/* Map & Contact Form – Mobile Fix */
+@media (max-width: 768px) {
+
+  .map iframe {
+    height: 220px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form .cta-button {
+    position: relative;      /* remove absolute */
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+/* Services Section */
+.services {
+  padding: 80px 20px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.services h1 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Service Card */
+.service {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.service h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service img {
+    max-height: 200px;
+  }
+}
+.contact-float {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 99999;
+}
+
+.contact-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.contact-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Services Section – Mobile & Laptop Fix */
+@media (max-width: 768px) {
+
+  .services {
+    padding: 60px 15px;
+  }
+
+  .services h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .service {
+    padding: 20px;
+  }
+
+  /* Disable hover jump on mobile */
+  .service:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Floating contact buttons reposition */
+  .contact-float {
+    right: 12px;
+    bottom: 20px;
+  }
+
+  .contact-button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .contact-button img {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Navbar fixed at top */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 10px;     /* horizontal padding only */
+    margin: 0;
+    height: auto;        /* let content define height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo */
+  nav .logo img {
+    height: 45px;
+    margin: 0;
+    display: block;
+  }
+
+  /* Menu items in a row */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;   /* vertically center items */
+  }
+
+  /* Reduce spacing between links */
+  nav ul li {
+    margin: 3px 12px 0 3px;    /* horizontal spacing only */
+    padding: 0;
+  }
+
+  /* Links style */
+  nav ul li a,
+  nav ul li span {
+    font-size: 0.95rem;   /* slightly smaller for mobile */
+    line-height: 1;
+    padding: 5px 0;       /* small vertical padding */
+    white-space: nowrap;   /* prevent wrapping */
+  }
+
+  /* Push page content below navbar */
+  body {
+    padding-top: 60px;    /* adjust to actual navbar height */
+  }
+}
